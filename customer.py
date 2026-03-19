@@ -17,3 +17,12 @@ class Customer:                      #constructor with class to create a new cus
 
     def __str__(self):
         return f"Name: {self.name}, Phone: {self.phone_number}, Plan: {self.plan}"      #display info
+
+class PayMonthlyCustomer(Customer):                     #sybclass for PAYM customer inherits from customer
+    def __init__(self, name, phone_number, plan, contract_length):
+        super().__init__(name, phone_number, plan)                #use parent class constructor for the details already there 
+
+        self.contract_lenght = contract_length               #additional attribute
+    
+    def __str__(self):
+        return f"{super().__str__()}, Contract: {self.contract_length} months"             #include contract length
